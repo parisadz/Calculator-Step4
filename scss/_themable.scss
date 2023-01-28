@@ -1,0 +1,64 @@
+@mixin themeAble(
+  $theme-name,
+  $background: #f3f3f3,
+  $semi-buttons: #f7f7f7,
+  $number-buttons: rgb(253, 253, 253),
+  $hover-gray: #e1e1e1,
+  $menu-hover: #e3e3e3,
+  $border: rgba(177, 177, 177, 0.644),
+  $red-hover: rgb(236, 57, 71),
+  $text: #000,
+  $font: ("Gantari", sans-serif)
+) {
+}
+
+@include themeAble(
+  "defult",
+  $back-defult: #f3f3f3,
+  $dark-btn-defult: #e8e8e8,
+  $num-btn-defult: #fdfdfd,
+  $hover-gray-defult: #e1e1e1,
+  $menu-hover-defult: #e3e3e3,
+  $radius-defult: 0,
+  // $font-family-defult: "Segoe UI",
+  // Tahoma,
+  // Geneva,
+  // Verdana,
+  // sans-serif
+);
+
+@include themeAble(
+  "green",
+  $back-green: #bdf77a,
+  $dark-btn-green: #53bf3e,
+  $num-btn-green: #c4f13a,
+  $hover-gray-green: #33721b,
+  $menu-hover-green: #33721b,
+  $radius-green: 15px,
+  // $font-family-green: "Inconsolata",
+  // monospace
+);
+
+@include themeAble(
+  "blue",
+  $back-blue: #68fcfc,
+  $dark-btn-blue: #57a9ca,
+  $num-btn-blue: #7fc0eb,
+  $hover-gray-blue: #08639f,
+  $menu-hover-blue: #08639f,
+  $radius-blue: 15px 0 15px 0,
+  // $font-family-blue: "Kalam",
+  // "cursive"
+);
+
+@include themeAble(
+  "purple",
+  $back-purple: #cd51d8,
+  $dark-btn-purple: #6b136b,
+  $num-btn-purple: #f04df0,
+  $hover-gray-purple: #530053,
+  $menu-hover-purple: #530053,
+  $radius-purple: 10px 10px 10px 0,
+  // $font-family-purple: "Pathway Gothic One",
+  // sans-serif
+);

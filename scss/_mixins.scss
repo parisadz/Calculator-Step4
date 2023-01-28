@@ -1,0 +1,33 @@
+@mixin btns-images {
+  background-color: var(--dark-btn);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin display-none {
+  display: none;
+}
+
+@mixin dis-flex-w100-h100 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin disFelex-justCenter-alignItem-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin posAbslote-overflowAuto {
+  position: absolute;
+  overflow: auto;
+}
+
+@mixin textHistoryAndMemory {
+  margin-top: 30px;
+  margin-left: 8px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
