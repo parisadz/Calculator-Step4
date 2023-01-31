@@ -44,6 +44,7 @@ class Calculator {
         "PreviousNumber"
       ).innerHTML = `${this.FirstNumber} ${operator} ${realValue} ${operators}`;
       this.interruption = false;
+      document.getElementById("PreviousNumber").innerHTML = "";
     } else if (operators != "=" && this.DisplayValue != 0 && !this.expression) {
       if (!(operator && this.interruption)) {
         const prevText = document.getElementById("PreviousNumber");
@@ -454,16 +455,20 @@ const history = document.querySelector(".his");
 const MemoryFunction = () => {
   memory.style.borderBottom = "3px solid orange";
   memory.style.paddingBottom = "3px";
-  history.style.border = "none";
+  memory.style.marginBottom = "-6px";
+  history.style.borderBottom = "none";
   history.style.padding = "0";
+  history.style.marginBottom = "0";
   document.querySelector(".memory-save").style.display = "block";
 };
 
 const HistoryFunction = () => {
   history.style.borderBottom = "3px solid orange";
   history.style.paddingBottom = "3px";
-  memory.style.border = "none";
+  history.style.marginBottom = "-6px";
+  memory.style.borderBottom = "none";
   memory.style.padding = "0";
+  memory.style.marginBottom = "0";
   document.querySelector(".memory-save").style.display = "none";
 };
 

@@ -1,5 +1,44 @@
-@import "themable";
-@import "mixins";
+@use "mixins";
+
+:root[data-theme="default"] {
+  $background: #f3f3f3;
+  $dark-btn: #e8e8e8;
+  $num-btn: #fdfdfd;
+  $hover-gray: #e1e1e1;
+  $menu-hover: #e3e3e3;
+  $radius: 0;
+  $font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root[data-theme="green"] {
+  $background: #bdf77a;
+  $dark-btn: #53bf3e;
+  $num-btn: #c4f13a;
+  $hover-gray: #33721b;
+  $menu-hover: #33721b;
+  $radius: 15px;
+  $font-family: "Inconsolata", monospace;
+}
+
+:root[data-theme="blue"] {
+  $background: #68fcfc;
+  $dark-btn: #57a9ca;
+  $num-btn: #7fc0eb;
+  $hover-gray: #08639f;
+  $menu-hover: #2166ef;
+  $radius: 15px 0 15px 0;
+  $font-family: "Kalam", cursive;
+}
+
+:root[data-theme="purple"] {
+  $background: #cd51d8;
+  $dark-btn: #6b136b;
+  $num-btn: #f04df0;
+  $hover-gray: #530053;
+  $menu-hover: #530053;
+  $radius: 10px 10px 10px 0;
+  $font-family: "Pathway Gothic One", sans-serif;
+}
 
 .trash-div-class {
   position: fixed;
@@ -14,15 +53,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-family);
+  font-family: var($font-family);
 }
 html {
   @include dis-flex-w100-h100();
-  background: var(--background);
+  background: var($background);
 }
 body {
   @include dis-flex-w100-h100();
-  background: var(--background);
+  background: var($background);
 }
 #container {
   height: 100vh;
@@ -49,14 +88,14 @@ body {
   height: 100%;
   width: 33.333333%;
   &:hover {
-    background-color: var(--menu-hover);
+    background-color: var($menu-hover);
     &:nth-child(3n) {
-      background-color: var(--hover-gray);
+      background-color: var($hover-gray);
     }
   }
 }
 h1 {
-  font-family: var(--font-family);
+  font-family: var($font-family);
   font-size: 0.8rem;
   margin-top: 8px;
   margin-left: 10px;
@@ -67,9 +106,9 @@ h1 {
 }
 .stand {
   margin-left: 5px;
-  margin-top: 7px;
+  margin-top: 5px;
   font-size: 1.3em;
-  font-family: var(--font-family);
+  font-family: var($font-family);
 }
 .up {
   display: flex;
@@ -82,8 +121,8 @@ h1 {
   height: 39px;
   padding: 10px;
   &:hover {
-    background-color: var(--menu-hover);
-    border-radius: var(--radius);
+    background-color: var($menu-hover);
+    border-radius: var($radius);
   }
 }
 .history-icon-container {
@@ -91,7 +130,7 @@ h1 {
   width: 40px;
   height: 100%;
   &:hover {
-    background-color: var(--menu-hover);
+    background-color: var($menu-hover);
   }
 }
 #result {
@@ -105,12 +144,12 @@ h1 {
   align-self: flex-end;
   flex-direction: column;
   margin-right: 10px;
-  font-family: var(--font-family);
+  font-family: var($font-family);
 }
 #PreviousNumber {
   align-self: flex-end;
   color: #b1afaf;
-  font-family: var(--font-family);
+  font-family: var($font-family);
 }
 .CurrentNumber {
   width: 100%;
@@ -119,14 +158,14 @@ h1 {
   font-size: 2.5rem;
   font-weight: bold;
   text-align: right;
-  font-family: var(--font-family);
+  font-family: var($font-family);
   background-color: transparent;
   resize: none;
   outline: none;
 }
 .small {
   width: 100%;
-  height: 18%;
+  height: 10%;
   display: flex;
   justify-content: space-between;
 }
@@ -140,14 +179,14 @@ h1 {
   height: 90%;
   width: 19%;
   font-size: 0.8em;
-  font-family: var(--font-family);
+  font-family: var($font-family);
   border: none;
   background-color: transparent;
 }
 .active {
   &:hover {
-    background-color: var(--hover-gray);
-    border-radius: var(--radius);
+    background-color: var($hover-gray);
+    border-radius: var($radius);
   }
 }
 .extera {
@@ -156,7 +195,7 @@ h1 {
 button {
   &:hover {
     &:enabled {
-      background-color: var(--hover-gray);
+      background-color: var($hover-gray);
     }
   }
 }
@@ -175,26 +214,26 @@ button {
     height: 22px;
   }
   @include disFelex-justCenter-alignItem-center();
-  width: 24.5%;
-  height: 16.1%;
+  width: 24.7%;
+  height: 16.4%;
   border: none;
-  border-radius: var(--radius);
-  font-family: var(--font-family);
+  border-radius: var($radius);
+  font-family: var($font-family);
   &:hover {
-    background-color: var(--hover-gray);
+    background-color: var($hover-gray);
     &:nth-child(5n) {
-      background-color: var(--hover-gray);
+      background-color: var($hover-gray);
     }
   }
 }
 .num {
-  background-color: var(--num-btn);
+  background-color: var($num-btn);
 }
 .dark {
-  background-color: var(--dark-btn);
+  background-color: var($dark-btn);
 }
 .percent {
-  background: url("https://img.icons8.com/metro/26/000000/percentage2--v1.png");
+  background: url("https://img.icons8.com/metro/26/000000/percentage2$v1.png");
   @include btns-images();
 }
 .square {
@@ -202,7 +241,7 @@ button {
   @include btns-images();
 }
 .delete {
-  background: url("https://img.icons8.com/material-outlined/24/000000/clear-symbol--v1.png");
+  background: url("https://img.icons8.com/material-outlined/24/000000/clear-symbol$v1.png");
   @include btns-images();
 }
 .divide {
@@ -210,19 +249,19 @@ button {
   @include btns-images();
 }
 .multiply {
-  background: url("https://img.icons8.com/material/24/000000/multiply--v1.png");
+  background: url("https://img.icons8.com/material/24/000000/multiply$v1.png");
   @include btns-images();
 }
 .minus {
-  background: url("https://img.icons8.com/material-two-tone/24/000000/minus--v1.png");
+  background: url("https://img.icons8.com/material-two-tone/24/000000/minus$v1.png");
   @include btns-images();
 }
 .plus {
-  background: url("https://img.icons8.com/material/24/000000/plus-math--v2.png");
+  background: url("https://img.icons8.com/material/24/000000/plus-math$v2.png");
   @include btns-images();
 }
 .equal {
-  background: url("https://img.icons8.com/material/24/000000/equal-sign--v1.png");
+  background: url("https://img.icons8.com/material/24/000000/equal-sign$v1.png");
   @include btns-images();
 }
 .plus-minus {
@@ -240,19 +279,16 @@ button {
 }
 .his {
   color: black;
-  margin-top: 7px;
   padding-bottom: 3px;
   &:hover {
-    color: var(--hover-gray);
+    color: var($hover-gray);
   }
 }
 .memory {
   color: black;
-  margin-top: 4px;
-  border-bottom: 3px solid orange;
   margin-left: 35px;
   &:hover {
-    color: var(--hover-gray);
+    color: var($hover-gray);
   }
 }
 .history-and-memory {
@@ -261,7 +297,7 @@ button {
   display: flex;
   align-items: center;
   padding-left: 13px;
-  font-family: var(--font-family);
+  font-family: var($font-family);
 }
 .hidden-history {
   @include posAbslote-overflowAuto();
@@ -270,7 +306,7 @@ button {
   min-height: 240px;
   z-index: -1;
   top: 38%;
-  background-color: var(--background);
+  background-color: var($background);
 }
 .hidden-memory {
   @include posAbslote-overflowAuto();
@@ -279,7 +315,7 @@ button {
   min-height: 240px;
   z-index: -1;
   top: 38%;
-  background-color: var(--background);
+  background-color: var($background);
 }
 .text-history {
   @include textHistoryAndMemory();
@@ -288,24 +324,24 @@ button {
   @include textHistoryAndMemory();
 }
 .history-container-div {
-  background-color: var(--background);
+  background-color: var($background);
   position: relative;
   width: 100%;
   height: 100px;
   padding: 20px;
   &:hover {
-    background-color: var(--hover-gray);
+    background-color: var($hover-gray);
   }
 }
 .memory-container-div {
-  background-color: var(--background);
+  background-color: var($background);
   position: relative;
   width: 100%;
   height: 80px;
   padding: 10px;
   margin-top: 10px;
   &:hover {
-    background-color: var(--hover-gray);
+    background-color: var($hover-gray);
   }
 }
 .memory-div-result {
@@ -324,7 +360,7 @@ button {
   display: block;
   button {
     &:hover {
-      background: var(--hover-gray);
+      background: var($hover-gray);
     }
   }
 }
@@ -351,7 +387,7 @@ button {
   top: 10px;
   left: 50px;
   background-color: inherit;
-  background: url("https://img.icons8.com/ios/20/000000/delete--v2.png");
+  background: url("https://img.icons8.com/ios/20/000000/delete$v2.png");
   background-repeat: no-repeat;
   background-position: center;
   &:hover {
@@ -370,12 +406,12 @@ button {
   width: 20px;
   height: 20px;
   padding: 20px;
-  background: url("https://img.icons8.com/ios/20/000000/delete--v2.png");
+  background: url("https://img.icons8.com/ios/20/000000/delete$v2.png");
   background-repeat: no-repeat;
   background-position: center;
   &:hover {
-    background-color: var(--hover-gray);
-    border-radius: var(--border);
+    background-color: var($hover-gray);
+    border-radius: var($border);
   }
 }
 .history-save {
@@ -412,12 +448,12 @@ button {
   &:hover {
     color: #000;
     font-weight: 500;
-    background: var(--hover-gray);
+    background: var($hover-gray);
   }
   &:active {
     color: #000;
     font-weight: 500;
-    background: var(--hover-gray);
+    background: var($hover-gray);
   }
 }
 .ParaAdd {
@@ -451,7 +487,7 @@ button {
     grid-template-areas: "header header" "result history" "buttons history";
   }
   .Btn {
-    font-family: var(--font-family);
+    font-family: var($font-family);
     font-size: 1rem;
   }
   #history {
@@ -480,7 +516,7 @@ button {
     top: 70px;
     right: 0;
     z-index: 1;
-    background-color: var(--background);
+    background-color: var($background);
   }
   .memory-save {
     @include posAbslote-overflowAuto();
@@ -491,7 +527,7 @@ button {
     top: 70px;
     right: 0;
     z-index: 1;
-    background-color: var(--background);
+    background-color: var($background);
   }
   .text-memory {
     margin-top: 30px;
@@ -516,10 +552,10 @@ button {
     }
   }
   .Btn {
-    width: 19.6%;
-    height: 19.2%;
+    width: 19.9%;
+    height: 19.7%;
     order: 1;
-    font-family: var(--font-family);
+    font-family: var($font-family);
     font-size: 1.5rem;
   }
 }
