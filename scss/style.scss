@@ -11,9 +11,9 @@
 }
 
 :root[data-theme="green"] {
-  --background: #bdf77a;
+  --background: #cbf899;
   --dark-btn: #53bf3e;
-  --num-btn: #c4f13a;
+  --num-btn: #55e800b8;
   --hover-gray: #33721b;
   --menu-hover: #33721b;
   --radius: 15px;
@@ -31,7 +31,7 @@
 }
 
 :root[data-theme="purple"] {
-  --background: #cd51d8;
+  --background: #d688dd;
   --dark-btn: #6b136b;
   --num-btn: #f04df0;
   --hover-gray: #530053;
@@ -68,7 +68,10 @@ body {
   width: 100vw;
   display: grid;
   grid-template-columns: minmax(300px, 100%);
-  grid-template-rows: minmax(33px, 4%) minmax(120px, 33%) minmax(257px, 62%);
+  grid-template-rows: minmax(33px, 33px) minmax(120px, 300px) minmax(
+      257px,
+      800px
+    );
   grid-template-areas: "header" "result" "buttons";
   overflow-y: auto;
   overflow-x: auto;
