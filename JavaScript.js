@@ -64,7 +64,6 @@ class Calculator {
         this.AddToHistory(false);
       }
       this.DisplayValue = `${parseFloat(result.toFixed(7))}`;
-      // document.getElementById("PreviousNumber").innerHTML = "";
       this.interruption = true;
       return;
     } else if (this.PrevNumber) {
@@ -114,6 +113,15 @@ class Calculator {
     const HistoryElem = document.getElementById("history-elements");
     const ContDiv = document.createElement("div");
     ContDiv.className = "history-container-div";
+    ContDiv.addEventListener("click", (event) => {
+      const { target } = event;
+      const bigDisplay = document.getElementById("CurrentNumber");
+      const smallDisplay = document.getElementById("PreviousNumber");
+      const forSmallDisplay = target.querySelector(".ParaAdd").innerHTML;
+      const forBigDisplay = target.querySelector(".ResultAdd").innerHTML;
+      bigDisplay.value = forBigDisplay;
+      smallDisplay.innerText = forSmallDisplay;
+    });
     if (HistoryElem.childNodes.length > 3) {
       HistoryElem.insertBefore(ContDiv, HistoryElem.FirstChild);
     } else {
