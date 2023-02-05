@@ -165,6 +165,7 @@ class Calculator {
         menu.style.left = "-200%";
       }
     }
+    // add to history part
     // ------------------------------create element p / node / ParaAdd / para-result / node-result / delete-history------------------------------
     const para = document.createElement("p");
     if (this.expression) {
@@ -283,7 +284,7 @@ class Calculator {
           ).innerHTML = `√(${this.DisplayValue})`;
           this.DisplayValue = parseFloat(number.toFixed(7));
           this.FirstNumber = parseFloat(number.toFixed(7));
-          this.expression = true;
+          this.expression = false;
           return;
         } else {
           alert(
@@ -299,7 +300,7 @@ class Calculator {
         ).innerHTML = `sqr(${this.DisplayValue})`;
         this.DisplayValue = parseFloat(number.toFixed(7));
         this.FirstNumber = parseFloat(number.toFixed(7));
-        this.expression = true;
+        this.expression = false;
         return;
       case "pow3":
         number = Math.pow(number, 3);
@@ -308,7 +309,7 @@ class Calculator {
         ).innerHTML = `cube(${this.DisplayValue})`;
         this.DisplayValue = parseFloat(number.toFixed(7));
         this.FirstNumber = parseFloat(number.toFixed(7));
-        this.expression = true;
+        this.expression = false;
         return;
       case "1/x":
         if (number == 0) {
@@ -322,7 +323,7 @@ class Calculator {
           ).innerHTML = `1/(${this.DisplayValue})`;
           this.DisplayValue = parseFloat(number.toFixed(7));
           this.FirstNumber = parseFloat(number.toFixed(7));
-          this.expression = true;
+          this.expression = false;
           return;
         }
       case "plus-minus":
